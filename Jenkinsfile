@@ -11,11 +11,6 @@ pipeline {
             sh 'java -version'
           }
         }
-        stage('Hello Venkat') {
-          steps {
-            sh 'java -version'
-          }
-        }
       }
     }
   }
@@ -24,6 +19,6 @@ pipeline {
     TEST_USER = credentials('test-user')
   }
   parameters {
-    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
+    string(name: 'Venkat', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
