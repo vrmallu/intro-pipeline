@@ -14,6 +14,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      options {
+        timeout(time: 1, unit: 'MINUTES')
+      }
       input {
         message 'Should we continue?'
       }
@@ -27,6 +30,6 @@ pipeline {
     TEST_USER = credentials('test-user')
   }
   parameters {
-    string(name: 'name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
+    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
