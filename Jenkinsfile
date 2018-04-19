@@ -17,18 +17,14 @@ pipeline {
       failFast true
       parallel {
         stage('Java 7') {
-          agent {
-            docker 'openjdk:7-jdk-alpine'
-          }
+          agent any
           steps {
             sh 'java -version'
             sleep(time: 10, unit: 'SECONDS')
           }
         }
         stage('Java 8') {
-          agent {
-            docker 'openjdk:8-jdk-alpine'
-          }
+          agent any
           steps {
             sh 'java -version'
             sleep(time: 20, unit: 'SECONDS')
